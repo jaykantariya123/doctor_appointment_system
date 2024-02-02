@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegisterService } from '../../Service/register.service';
 
 @Component({
@@ -12,10 +13,10 @@ export class RegisterComponent {
   firstName: string = '';
   lastName: string = '';
   phone: string = '';
-  address: string = ''
-  isDoctor:Boolean=false;
+  address: string = '';
+  isDoctor: Boolean = false;
 
-  constructor(private registerService: RegisterService) {
+  constructor(private registerService: RegisterService, private router: Router) {
 
   }
   onClick() {
@@ -26,7 +27,8 @@ export class RegisterComponent {
       firstName: this.firstName,
       lastName: this.lastName,
       phone: this.phone,
-      address: this.address
+      address: this.address,
+      isDoctor:this.isDoctor
     };
     console.log(data);
 
@@ -35,6 +37,7 @@ export class RegisterComponent {
         console.log(response.data);
 
         console.log("successful data added");
+        this.router.navigate(['/login']);
       })
       .catch(error => {
         console.log(error)

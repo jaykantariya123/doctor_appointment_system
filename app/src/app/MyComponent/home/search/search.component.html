@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row height d-flex justify-content-center align-items">
+    <div class="col">
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="search doctor"
+          [(ngModel)]="search_doctor"
+        />
+        <button class="btn btn-primary" (click)="searchDoctor()">Search</button>
+      </div>
+      <!--  -->
+      <div>
+        <table class="table align-middle mb-0 bg-white">
+          <thead class="bg-light">
+            <tr>
+              <th>Name</th>
+              <th>Website</th>
+              <th>specialization</th>
+              <th>experience</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doctor of doctors">
+              <td>
+                <div class="d-flex align-items-center">
+                  <!-- <img
+                    [src]="doctor.avatar"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                  /> -->
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ doctor.name }}</p>
+                    <p class="text-muted mb-0">{{ doctor.email }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ doctor.website }}</p>
+                <!-- <p class="text-muted mb-0">{{ employee.department }}</p> -->
+              </td>
+              <td>
+                <!-- <span
+                  class="badge badge-{{
+                    employee.statusClass
+                  }} rounded-pill d-inline"
+                  >{{ employee.status }}</span
+                > -->
+                {{ doctor.specialization }}
+              </td>
+              <td>{{ doctor.experience }}</td>
+              <td>
+                <!-- <label #userIdLabel style="display: none;">{{ doctor.userId }}</label> -->
+                <button
+                  type="button"
+                  class="btn btn-link btn-sm btn-rounded"
+                  (click)="find_appointment(doctor)"
+                >
+                  Find Appointment
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--  -->
+    </div>
+  </div>
+</div>

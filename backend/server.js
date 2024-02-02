@@ -8,6 +8,10 @@ import {
 } from "./controllers/userControllers.js";
 import bodyParser from "body-parser";
 import cors from "cors";
+import userRoutes from "./routes/userRoutes.js";
+import doctorRoutes from "./routes/doctorRoutes.js";
+
+
 const app = express();
 
 dotenv.config();
@@ -48,6 +52,15 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log("server is litening", PORT);
 });
+
+
+app.use("/api/user", userRoutes);
+
+// adminroutes
+// app.use("/api/admin", adminRoutes);
+
+// doctor routes
+app.use("/api/doctor", doctorRoutes);
 
 // LOGIN || post
 app.post("/api/user/login", loginController);

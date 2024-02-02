@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const doctorSchema = new mongoose.Schema(
   {
-    user: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "user",
@@ -16,14 +16,14 @@ const doctorSchema = new mongoose.Schema(
     },
     slots: {
       type: [String],
-      required: [true, "atleast one slot is required"],
+      // required: [true, "atleast one slot is required"],
     },
     experience: {
       type: String,
       required: [true, "experience is required"],
     },
     feesPerCunsaltation: {
-      type: Number,
+      type: String,
       required: [true, "fee is required"],
     },
     status: {
