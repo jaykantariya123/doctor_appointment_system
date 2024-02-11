@@ -9,6 +9,12 @@ interface Doctor {
   website: string;
   specialization: string;
   experience: string;
+  timeslots: {
+    morningStart: String,
+    morningEnd: String,
+    eveningStart: String,
+    eveningEnd: String
+  };
 }
 
 @Component({
@@ -34,6 +40,7 @@ export class SearchComponent {
           website: item.website,
           specialization: item.specialization,
           experience: item.experience,
+          timeslotes: item.timeSlot
         }));
         // console.log(this.doctors);
         // console.log("successful data added");
@@ -50,7 +57,8 @@ export class SearchComponent {
     );
   }
 
-  find_appointment(data:any) {
-    this.router.navigate(['/appointment', data]);
+  book_appointment(doctor: any) {
+    console.log(doctor);
+    localStorage.setItem('doctordata', JSON.stringify(doctor));
   }
 }

@@ -1,5 +1,4 @@
 import mongoose, { Schema, model } from "mongoose";
-import moment from "moment";
 
 const appointmentSchema = new Schema(
   {
@@ -27,11 +26,11 @@ const appointmentSchema = new Schema(
     },
     feel: {
       type: String,
-      required: true,
+      // required: true,
     },
     meetingMode: {
       type: String,
-    //   required: true,
+      //   required: true,
     },
     meetingLink: {
       type: String,

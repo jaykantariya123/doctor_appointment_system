@@ -10,7 +10,7 @@ import { ApplyDoctorService } from '../../../Service/Apply-doctor/apply-doctor.s
   styleUrl: './doctor-form.component.css'
 })
 export class DoctorFormComponent {
-  morningTimeOptions = ['9:00', '10:00', '11:00', '12:00', '13:00'];
+  morningTimeOptions = ['9:00', '10:00', '11:00', '12:00', '1:00'];
   eveningTimeOptions = ['4:00', '5:00', '6:00', '7:00', '8:00'];
   userId: string = '';
   website: string = '';
@@ -64,7 +64,7 @@ export class DoctorFormComponent {
             })
         }
       })
-      .catch(error=>{
+      .catch(error => {
         console.log("not found user");
       })
 

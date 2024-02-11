@@ -55,13 +55,14 @@
               <td>{{ doctor.experience }}</td>
               <td>
                 <!-- <label #userIdLabel style="display: none;">{{ doctor.userId }}</label> -->
-                <button
-                  type="button"
+                <a
                   class="btn btn-link btn-sm btn-rounded"
-                  (click)="find_appointment(doctor)"
+                  [routerLink]="['../appointment']"
+                  routerLinkActive="router-link-active"
+                  (click)="book_appointment(doctor)"
                 >
                   Find Appointment
-                </button>
+                </a>
               </td>
             </tr>
           </tbody>

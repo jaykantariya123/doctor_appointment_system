@@ -6,6 +6,7 @@ import { HomeComponent } from './MyComponent/home/home.component';
 import { SearchComponent } from './MyComponent/home/search/search.component';
 import { DoctorFormComponent } from './MyComponent/home/doctor-form/doctor-form.component';
 import { DashboardComponent } from './MyComponent/home/dashboard/dashboard.component';
+import { AppointmentComponent } from './MyComponent/home/appointment/appointment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,10 +17,12 @@ const routes: Routes = [
       // { path: '', redirectTo: 'search', pathMatch: 'full' },
       { path: 'search', component: SearchComponent },
       { path: 'doctorform', component: DoctorFormComponent },
-      { path: 'dashboard', component: DashboardComponent }
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'appointment', component: AppointmentComponent }
     ]
+    
   },
-
+  
 ];
 
 @NgModule({

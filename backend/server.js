@@ -10,6 +10,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import userRoutes from "./routes/userRoutes.js";
 import doctorRoutes from "./routes/doctorRoutes.js";
+import appointmentRoutes from "./routes/appointmentRoutes.js"
 
 
 const app = express();
@@ -55,6 +56,8 @@ app.listen(PORT, () => {
 
 
 app.use("/api/user", userRoutes);
+
+app.use("/api/appointment",appointmentRoutes);
 
 // adminroutes
 // app.use("/api/admin", adminRoutes);

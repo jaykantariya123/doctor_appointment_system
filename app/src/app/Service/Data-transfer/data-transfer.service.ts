@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class DataTransferService {
 
-  private userId: string='';
-  
+  private userId: string = '';
+
   constructor() { }
   setUserId(id: string): void {
     this.userId = id;

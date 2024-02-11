@@ -1,1 +1,77 @@
-<p>appointment works!</p>
+<div class="container">
+  <div class="shadow p-3 mb-3 bg-body rounded">
+    <h1>Doctor details</h1>
+  </div>
+  <div class="shadow p-3 mb-3 bg-body rounded">
+    <p><B>Doctor name:</B> {{ doctor_data.name }}</p>
+    <p><B>Doctor email:</B> {{ doctor_data.email }}</p>
+    <p><B>Doctor website:</B> {{ doctor_data.website }}</p>
+    <p><B>Doctor specialization:</B> {{ doctor_data.specialization }}</p>
+    <p><B>Doctor experience:</B> {{ doctor_data.experience }}</p>
+  </div>
+
+  <div class="shadow p-3 mb-3 bg-body rounded">
+    <h1>Appointment details</h1>
+  </div>
+
+  <div class="shadow p-3 mb-3 bg-body rounded">
+    <label [class.red-text]="showMessage === 'This slot already booked,Sorry !!!'">{{showMessage}}</label>
+    <br/>
+    <B>Appointment date : </B>
+    <input
+      type="date"
+      name="appointment"
+      id="appointmentdate"
+      [(ngModel)]="date"
+    />
+    <br />
+    <br />
+
+    <label for="timeRange"><b>Choose Time slots:</b></label>
+    <select
+      id="timeRange"
+      [(ngModel)]="timeRange"
+      (change)="onTimeRangeChange(timeRange)"
+    >
+      <option value="morning">Morning</option>
+      <option value="evening">Evening</option>
+    </select>
+    <br />
+    <!-- <label for="morningTime">Morning Time:</label> -->
+    <select id="Time" [(ngModel)]="time">
+      <option
+        *ngFor="
+          let time of timeRange === 'morning'
+            ? morningTimeRanges
+            : eveningTimeRanges
+        "
+        [value]="time"
+      >
+        {{ time }}
+      </option>
+    </select>
+    <br />
+    <br />
+
+    <!-- <label for="eveningTime">Evening Time:</label>
+    <select id="eveningTime">
+      <option *ngFor="let range of eveningTimeRanges" [value]="range">
+        {{ range }}
+      </option>
+    </select> -->
+
+    <br />
+    <br />
+
+    <button class="button-12" role="button" (click)="bookAppointmnet()">
+      Book Appointment
+    </button>
+
+    <!-- <br />
+    <br />
+    <label for="feel">Description of feel:</label>
+    <input type="text" id="feel" /> -->
+  </div>
+</div>
+
+

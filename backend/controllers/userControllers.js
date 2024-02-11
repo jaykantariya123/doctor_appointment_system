@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import CryptoJS from "crypto-js";
+import appointmentModel from "../models/appointmentModels.js";
 
 // login call back
 export const loginController = async (req, res) => {
@@ -90,3 +91,4 @@ export const registerController = async (req, res) => {
     });
   }
 };
+
