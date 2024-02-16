@@ -32,3 +32,25 @@ export const bookAppointmentController = async (req, res) => {
     });
   }
 };
+
+export const getappointmentController = async (req, res) => {
+  try {
+    const { user } = req.body;
+    const Appointment = await appointmentModel
+      .find({
+        user: user,
+      })
+      .populate("doctor");
+
+    res.status(200).send({
+      success: true,
+      message: "appointment list fetched successfully",
+      Appointment,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      message: `getInfo Controller : ${error.message}`,
+      success: false,
+    });
+  }
+};

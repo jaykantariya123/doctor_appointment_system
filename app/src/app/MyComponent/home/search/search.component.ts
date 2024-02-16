@@ -34,6 +34,7 @@ export class SearchComponent {
         // console.log(response.data.doctorList);
 
         this.doctors = response.data.doctorList.map((item: any) => ({
+          doctorId: item._id,
           userId: item.userId,
           name: `${item.userId.firstName} ${item.userId.lastName}`,
           email: item.userId.email,
@@ -58,7 +59,7 @@ export class SearchComponent {
   }
 
   book_appointment(doctor: any) {
-    console.log(doctor);
+    // console.log(doctor);
     localStorage.setItem('doctordata', JSON.stringify(doctor));
   }
 }

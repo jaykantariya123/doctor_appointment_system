@@ -23,7 +23,7 @@
           </li>
           <li>
             <a
-             [routerLink]="['dashboard']"
+              [routerLink]="['dashboard']"
               routerLinkActive="router-link-active"
               data-bs-toggle="collapse"
               class="nav-link px-0 align-middle"
@@ -58,13 +58,8 @@
               <span class="ms-1 d-none d-sm-inline">Doctors</span></a
             >
           </li>
-          <li>
-            <a
-              [routerLink]="['appointment']"
-              routerLinkActive="router-link-active"
-              data-bs-toggle="collapse"
-              class="nav-link px-0 align-middle"
-            >
+          <!-- <li>
+            <a data-bs-toggle="collapse" class="nav-link px-0 align-middle">
               <i class="fs-4 bi-bootstrap"></i>
               <span class="ms-1 d-none d-sm-inline">Appointment</span></a
             >
@@ -73,7 +68,7 @@
               id="submenu2"
               data-bs-parent="#menu"
             ></ul>
-          </li>
+          </li> -->
           <li>
             <a
               href="#submenu3"
@@ -127,7 +122,7 @@
       </div>
     </div>
     <div class="col py-3">
-     <router-outlet ></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

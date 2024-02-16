@@ -18,11 +18,13 @@ export class HomeComponent {
     const userType = this.authService.getUserTypeFromToken();
     console.log(userType);
     this.isDoctor = userType === 'doctor';
-    this.route.params.subscribe(params => {
-      this.userId = params['id'];
-      // console.log('User ID:', this.id);
-      this.dataTransferService.setUserId(this.userId);
-    });
+    this.userId = JSON.stringify(localStorage.getItem('id'));
+    this.dataTransferService.setUserId(this.userId);
+    // this.route.params.subscribe(params => {
+    //   this.userId = params['id'];
+    //   // console.log('User ID:', this.id);
+
+    // });
 
   }
 

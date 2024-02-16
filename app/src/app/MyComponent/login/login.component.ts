@@ -31,7 +31,8 @@ export class LoginComponent {
         // console.log(response.data.token);
 
         console.log("successful login");
-        this.router.navigate(['/home', this.authService.getIdFromToken()]);
+        localStorage.setItem('id', JSON.stringify(this.authService.getIdFromToken()));
+        this.router.navigate(['/home']);
 
       })
       .catch(error => {

@@ -13,6 +13,9 @@ import { SearchComponent } from './MyComponent/home/search/search.component';
 import { DoctorFormComponent } from './MyComponent/home/doctor-form/doctor-form.component';
 import { DashboardComponent } from './MyComponent/home/dashboard/dashboard.component';
 import { AppointmentComponent } from './MyComponent/home/appointment/appointment.component';
+import { RoomComponent } from './MyComponent/home/room/room.component';
+import { VideoCallComponent } from './MyComponent/home/video-call/video-call.component';
+import { AppointmentsComponent } from './MyComponent/home/appointments/appointments.component';
 
 
 @NgModule({
@@ -26,6 +29,9 @@ import { AppointmentComponent } from './MyComponent/home/appointment/appointment
     DoctorFormComponent,
     DashboardComponent,
     AppointmentComponent,
+    RoomComponent,
+    VideoCallComponent,
+    AppointmentsComponent,
   ],
   imports: [
     BrowserModule,

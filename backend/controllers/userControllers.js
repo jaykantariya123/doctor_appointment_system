@@ -92,3 +92,16 @@ export const registerController = async (req, res) => {
   }
 };
 
+export const getInfoController = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const user = await userModel.findOne({ _id: userId});
+    // console.log(user1);
+    res.json(user);
+  } catch (error) {
+    return res.status(500).send({
+      message: `getInfo Controller : ${error.message}`,
+      success: false,
+    });
+  }
+};

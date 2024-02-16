@@ -38,7 +38,7 @@ export class DoctorFormComponent {
       feesPerCunsaltation: this.feesPerCunsaltation,
       timeSlot: this.timeSlot,
     };
-
+    
 
     this.applyDoctorService.getdoctor(this.userId)
       .then(response => {

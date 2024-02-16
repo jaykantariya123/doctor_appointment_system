@@ -49,12 +49,15 @@ export class AppointmentComponent {
 
   ngOnInit(): void {
     const data = localStorage.getItem('doctordata');
-    console.log(data);
+    // console.log(data);
     if (data) {
       this.doctor_data = JSON.parse(data);
-      this.doctor_id = this.doctor_data.userId._id;
-      this.user_id = this.dataTransfer.getUserId();
-      // console.log(this.doctor_data.timeslotes);
+      // console.log(this.doctor_data.doctorId);
+      this.doctor_id = this.doctor_data.doctorId;
+      this.user_id = JSON.parse(JSON.parse(this.dataTransfer.getUserId()));
+      // console.log(this.doctor_data.);
+      // console.log(this.user_id, this.doctor_id);
+
     }
 
     this.morningTimeRanges = this.generateTimeRanges(
@@ -85,7 +88,7 @@ export class AppointmentComponent {
     this.bookappointment.postdata(data)
       .then(response => {
         console.log(response.data);
-        this.showMessage=response.data.message;
+        this.showMessage = response.data.message;
         // console.log("successful book appointment");
 
       })
