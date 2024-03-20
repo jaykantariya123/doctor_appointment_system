@@ -8,6 +8,8 @@ import { DoctorFormComponent } from './MyComponent/home/doctor-form/doctor-form.
 import { DashboardComponent } from './MyComponent/home/dashboard/dashboard.component';
 import { AppointmentComponent } from './MyComponent/home/appointment/appointment.component';
 import { RoomComponent } from './MyComponent/home/room/room.component';
+import { AboutComponent } from './MyComponent/about/about.component';
+import { SymptomCheckerComponent } from './MyComponent/home/symptom-checker/symptom-checker.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -20,11 +22,12 @@ const routes: Routes = [
       { path: 'doctorform', component: DoctorFormComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'appointment', component: AppointmentComponent },
+      { path: 'symptom-checker', component: SymptomCheckerComponent },
       { path: 'room/:roomId', component: RoomComponent }
     ]
 
   },
-
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({

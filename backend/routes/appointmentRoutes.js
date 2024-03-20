@@ -1,7 +1,9 @@
 import { Router } from "express";
 const router = Router();
 
-import { bookAppointmentController,getappointmentController} from "../controllers/appointmentControllers.js";
+import { bookAppointmentController,getappointmentController, verifyAppointmentController} from "../controllers/appointmentControllers.js";
+
+router.post("/verify-appointment", verifyAppointmentController);
 
 router.post("/book-appointment", bookAppointmentController);
 

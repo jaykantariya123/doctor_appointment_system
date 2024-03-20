@@ -7,6 +7,11 @@ import axios from 'axios';
 export class BookAppointmentServiceService {
 
   constructor() { }
+  verifydata(data: any): Promise<any> {
+    // console.log(data);
+    return axios.post('http://localhost:8080/api/appointment/verify-appointment', data);
+  }
+
   postdata(data: any): Promise<any> {
     // console.log(data);
     return axios.post('http://localhost:8080/api/appointment/book-appointment', data);

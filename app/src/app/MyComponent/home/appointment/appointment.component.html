@@ -1,5 +1,8 @@
 <div class="container">
-  <div class="shadow p-3 mb-3 bg-body rounded">
+  <div
+    class="shadow p-3 mb-3 rounded"
+    style="background-color: #050336; color: white"
+  >
     <h1>Doctor details</h1>
   </div>
   <div class="shadow p-3 mb-3 bg-body rounded">
@@ -10,13 +13,19 @@
     <p><B>Doctor experience:</B> {{ doctor_data.experience }}</p>
   </div>
 
-  <div class="shadow p-3 mb-3 bg-body rounded">
+  <div
+    class="shadow p-3 mb-3 rounded"
+    style="background-color: #050336; color: white"
+  >
     <h1>Appointment details</h1>
   </div>
 
   <div class="shadow p-3 mb-3 bg-body rounded">
-    <label [class.red-text]="showMessage === 'This slot already booked,Sorry !!!'">{{showMessage}}</label>
-    <br/>
+    <label
+      [class.red-text]="showMessage === 'this slot already booked ,Sorry !!!!'"
+      >{{ showMessage }}</label
+    >
+    <br />
     <B>Appointment date : </B>
     <input
       type="date"
@@ -27,7 +36,7 @@
     <br />
     <br />
 
-    <label for="timeRange"><b>Choose Time slots:</b></label>
+    <B>Choose Time slots : </B>
     <select
       id="timeRange"
       [(ngModel)]="timeRange"
@@ -36,9 +45,8 @@
       <option value="morning">Morning</option>
       <option value="evening">Evening</option>
     </select>
-    <br />
     <!-- <label for="morningTime">Morning Time:</label> -->
-    <select id="Time" [(ngModel)]="time">
+    <select id="Time" [(ngModel)]="time" style="margin: 10px">
       <option
         *ngFor="
           let time of timeRange === 'morning'
@@ -73,5 +81,3 @@
     <input type="text" id="feel" /> -->
   </div>
 </div>
-
-

@@ -16,6 +16,8 @@ export class RegisterComponent {
   address: string = '';
   isDoctor: Boolean = false;
 
+  registrationSuccess: boolean = false;
+
   constructor(private registerService: RegisterService, private router: Router) {
 
   }
@@ -37,6 +39,8 @@ export class RegisterComponent {
         console.log(response.data);
 
         console.log("successful data added");
+
+        this.registrationSuccess = true;
         this.router.navigate(['/login']);
       })
       .catch(error => {

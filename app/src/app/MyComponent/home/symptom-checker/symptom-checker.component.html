@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div
+    class="shadow p-3 mb-3 rounded"
+    style="background-color: #050336; color: white"
+  >
+    <H2>symptom-checker</H2>
+  </div>
+
+  <!-- <input
+      name="symptom"
+      [(ngModel)]="symptom"
+      style="border: #050336 solid 2px"
+      placeholder="Enter multiple symptom (use comma)"
+    /> -->
+  <!-- <label for="symptoms">Select Symptoms:</label> -->
+  <!-- <p-multiSelect [options]="" [(ngModel)]="symptomsList" optionLabel="name"></p-multiSelect> -->
+  <!-- <select id="symptoms" name="symptoms" multiple [(ngModel)]="selectedSymptoms">
+    <option *ngFor="let symptom of symptomsList" [value]="symptom">{{ symptom }}</option>
+  </select> -->
+  <mat-form-field>
+    <mat-label>Symptoms</mat-label>
+    <mat-select [formControl]="symptoms" multiple>
+      @for (symptom of symptomsList; track symptom) {
+      <mat-option [value]="symptom">{{ symptom }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    style="background-color: #050336; color: white; margin: 5px"
+    (click)="predict_disease()"
+  >
+    Predict
+  </button>
+
+  <div *ngIf="diseaseDetails">
+    <div
+      class="shadow p-3 mb-3 bg-body rounded"
+      style="border: #050336 solid 2px"
+    >
+      <h2>{{ diseaseDetails.disease }}</h2>
+      <p>{{ diseaseDetails.dis_des }}</p>
+
+      <h3>Precautions:</h3>
+      <ul>
+        <li *ngFor="let precaution of diseaseDetails.precautions">
+          {{ precaution }}
+        </li>
+      </ul>
+
+      <h3>Medications:</h3>
+      <ul>
+        <li *ngFor="let medication of diseaseDetails.medications">
+          {{ medication }}
+        </li>
+      </ul>
+
+      <h3>Recommended Diet:</h3>
+      <ul>
+        <li *ngFor="let diet of diseaseDetails.rec_diet">{{ diet }}</li>
+      </ul>
+
+      <h3>Workout:</h3>
+      <ul>
+        <li *ngFor="let workoutItem of diseaseDetails.workout">
+          {{ workoutItem }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

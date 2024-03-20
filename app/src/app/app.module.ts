@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,9 @@ import { AppointmentComponent } from './MyComponent/home/appointment/appointment
 import { RoomComponent } from './MyComponent/home/room/room.component';
 import { VideoCallComponent } from './MyComponent/home/video-call/video-call.component';
 import { AppointmentsComponent } from './MyComponent/home/appointments/appointments.component';
+import { AboutComponent } from './MyComponent/about/about.component';
+import { SymptomCheckerComponent } from './MyComponent/home/symptom-checker/symptom-checker.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -32,13 +38,16 @@ import { AppointmentsComponent } from './MyComponent/home/appointments/appointme
     RoomComponent,
     VideoCallComponent,
     AppointmentsComponent,
+    AboutComponent,
+    SymptomCheckerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule, MatSelectModule, ReactiveFormsModule
   ],
-  providers: [CookieService],
+  providers: [CookieService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

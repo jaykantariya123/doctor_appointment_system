@@ -12,6 +12,7 @@ import { AuthService } from '../../Service/Auth/auth.service';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  loginfail: boolean = true;
 
   constructor(private loginService: LoginService, private authService: AuthService, private router: Router) {
 
@@ -37,6 +38,7 @@ export class LoginComponent {
       })
       .catch(error => {
         console.log(error)
+        this.loginfail = false;
         console.log("error in login");
       })
   }

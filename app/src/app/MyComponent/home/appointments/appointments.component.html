@@ -1,0 +1,73 @@
+<div>
+  <table class="table align-middle mb-0 bg-white">
+    <thead class="bg-dark" style="background-color: #050336; color: white">
+      <tr>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <td>
+          <div class="d-flex align-items-center">
+            <!-- <img
+                    [src]="
+                      https:  //t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg
+                    "
+                    alt=""
+                    style="width: 100%; height: 100%"
+                    class="rounded-circle"
+                  /> -->
+            <div class="ms-3">
+              <p class="fw-bold mb-1">{{ appointment.doctorName }}</p>
+              <p class="text-muted mb-0">{{ appointment.email }}</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">{{ appointment.date }}</p>
+          <!-- <p class="text-muted mb-0">{{ employee.department }}</p> -->
+        </td>
+        <td>
+          {{ appointment.time }}
+        </td>
+        <td
+          [ngClass]="{
+            done: isAppointmentDone(appointment.date),
+            pending: !isAppointmentDone(appointment.date)
+          }"
+        >
+          <label
+            [ngStyle]="{
+              'background-color': isAppointmentDone(appointment.date)
+                ? 'green'
+                : '#CB0305',
+              'padding-left': '10px',
+              'padding-right': '10px',
+              'padding-bottom': '5px',
+              'border-radius': '10px',
+              color: 'white'
+            }"
+          >
+            {{
+              isAppointmentDone(appointment.date) ? "Done" : appointment.status
+            }}
+          </label>
+        </td>
+        <td>
+          <app-video-call *ngIf="!isAppointmentDone(appointment.date)" />
+          <!-- <label #userIdLabel style="display: none;">{{ doctor.userId }}</label> -->
+          <!-- <a class="btn btn-link btn-sm btn-rounded"
+          [routerLink]="['../']"
+                  routerLinkActive="router-link-active"
+          (click)="oncall()"> call doctor </a> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- badge-{{employee.statusClass}}  -->

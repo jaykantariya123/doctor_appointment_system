@@ -26,7 +26,7 @@ export class DashboardComponent {
         this.email=response.data.email;
         this.address=response.data.address;
         this.phone=response.data.phone;
-        console.log("successful fetch data");
+        // console.log("successful fetch data");
       })
       .catch(error => {
         console.log(error)

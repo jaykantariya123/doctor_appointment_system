@@ -3,7 +3,11 @@
     <div class="user_card">
       <div class="d-flex justify-content-center">
         <div class="brand_logo_container">
-          <img src="../../../assets/image.jpg" class="brand_logo" alt="Logo" />
+          <img
+            src="../../../assets/healthlink.jpg"
+            class="brand_logo"
+            alt="Logo"
+          />
         </div>
       </div>
       <div class="d-flex justify-content-center form_container">
@@ -61,7 +65,14 @@
 
       <div class="mt-4">
         <div class="d-flex justify-content-center links">
-          Don't have an account? <a href="#" class="ml-2"  routerLink="/signup" routerLinkActive="active">Sign Up</a>
+          Don't have an account?
+          <a
+            href="#"
+            class="ml-2"
+            routerLink="/signup"
+            routerLinkActive="active"
+            >Sign Up</a
+          >
         </div>
         <!-- <div class="d-flex justify-content-center links">
           <a href="#">Forgot your password?</a>
@@ -70,4 +81,10 @@
     </div>
   </div>
 </div>
-
+<label *ngIf="!loginfail" class="wrapper">
+  <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+  <div class="alert success">
+    <span class="alertClose">X</span>
+    <span class="alertText"><br />userName and password not correct !!!!</span>
+  </div>
+</label>

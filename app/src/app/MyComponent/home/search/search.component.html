@@ -12,9 +12,9 @@
         <button class="btn btn-primary" (click)="searchDoctor()">Search</button>
       </div>
       <!--  -->
-      <div>
+      <div style="margin-top: 10px">
         <table class="table align-middle mb-0 bg-white">
-          <thead class="bg-light">
+          <thead class="" style="background-color: #5cf78f; color: #050336">
             <tr>
               <th>Name</th>
               <th>Website</th>
@@ -58,6 +58,11 @@
               <td>
                 <!-- <label #userIdLabel style="display: none;">{{ doctor.userId }}</label> -->
                 <a
+                  style="
+                    background-color: #050336;
+                    color: white;
+                    border-radius: 9%;
+                  "
                   class="btn btn-link btn-sm btn-rounded"
                   [routerLink]="['../appointment']"
                   routerLinkActive="router-link-active"

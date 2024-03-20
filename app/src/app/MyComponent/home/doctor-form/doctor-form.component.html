@@ -1,94 +1,101 @@
 <form>
-  <div class="m-5">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">website</label>
-        <input
-          [(ngModel)]="website"
-          type="text"
-          class="form-control"
-          id="inputEmail4"
-          placeholder="website"
-          [ngModelOptions]="{ standalone: true }"
-        />
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">specialization</label>
-        <input
-          [(ngModel)]="specialization"
-          type="text"
-          class="form-control"
-          id="inputPassword4"
-          placeholder="specialization"
-          [ngModelOptions]="{ standalone: true }"
-        />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputFirstName4">experience</label>
-        <input
-          [(ngModel)]="experience"
-          type="text"
-          class="form-control"
-          id="inputFirstName4"
-          placeholder="experience"
-          [ngModelOptions]="{ standalone: true }"
-        />
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputLastName4">feesPerCunsaltation</label>
-        <input
-          [(ngModel)]="feesPerCunsaltation"
-          type="text"
-          class="form-control"
-          id="inputLastName4"
-          placeholder="feesPerCunsaltation"
-          [ngModelOptions]="{ standalone: true }"
-        />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <div>
-          <label>Morning Start:</label>
-          <select [(ngModel)]="timeSlot.morningStart" name="morningStart">
-            <option *ngFor="let time of morningTimeOptions" [value]="time">
-              {{ time }}
-            </option>
-          </select>
+  <div
+    class="shadow p-3 mb-3 rounded"
+    style="background-color: #050336; color: white"
+  >
+    <h1>Doctor details form</h1>
+  </div>
+  <div class="m-2">
+    <div class="shadow p-3 mb-3 rounded" style="border: #050336 solid 2px">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><b>website</b></label>
+          <input
+            [(ngModel)]="website"
+            type="text"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="website"
+            [ngModelOptions]="{ standalone: true }"
+          />
         </div>
-
-        <div>
-          <label>Morning End:</label>
-          <select [(ngModel)]="timeSlot.morningEnd" name="morningEnd">
-            <option *ngFor="let time of morningTimeOptions" [value]="time">
-              {{ time }}
-            </option>
-          </select>
-        </div>
-
-        <div>
-          <label>Evening Start:</label>
-          <select [(ngModel)]="timeSlot.eveningStart" name="eveningStart">
-            <option *ngFor="let time of eveningTimeOptions" [value]="time">
-              {{ time }}
-            </option>
-          </select>
-        </div>
-
-        <div>
-          <label>Evening End:</label>
-          <select [(ngModel)]="timeSlot.eveningEnd" name="eveningEnd">
-            <option *ngFor="let time of eveningTimeOptions" [value]="time">
-              {{ time }}
-            </option>
-          </select>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><b>specialization</b></label>
+          <input
+            [(ngModel)]="specialization"
+            type="text"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="specialization"
+            [ngModelOptions]="{ standalone: true }"
+          />
         </div>
       </div>
-    </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputFirstName4"><b>experience</b></label>
+          <input
+            [(ngModel)]="experience"
+            type="text"
+            class="form-control"
+            id="inputFirstName4"
+            placeholder="experience"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputLastName4"><b>feesPerCunsaltation</b></label>
+          <input
+            [(ngModel)]="feesPerCunsaltation"
+            type="text"
+            class="form-control"
+            id="inputLastName4"
+            placeholder="feesPerCunsaltation"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div>
+            <label class="mr-1"><b>Morning Start:</b></label>
+            <select [(ngModel)]="timeSlot.morningStart" name="morningStart">
+              <option *ngFor="let time of morningTimeOptions" [value]="time">
+                {{ time }}
+              </option>
+            </select>
+          </div>
 
-    <!-- <div class="form-group">
+          <div>
+            <label class="mr-2"><b>Morning End:</b></label>
+            <select [(ngModel)]="timeSlot.morningEnd" name="morningEnd">
+              <option *ngFor="let time of morningTimeOptions" [value]="time">
+                {{ time }}
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label class="mr-2"><b>Evening Start:</b></label>
+            <select [(ngModel)]="timeSlot.eveningStart" name="eveningStart">
+              <option *ngFor="let time of eveningTimeOptions" [value]="time">
+                {{ time }}
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label class="mr-2"><b>Evening End:</b></label>
+            <select [(ngModel)]="timeSlot.eveningEnd" name="eveningEnd">
+              <option *ngFor="let time of eveningTimeOptions" [value]="time">
+                {{ time }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
       <div class="form-check">
         <input
           class="form-check-input"
@@ -110,13 +117,14 @@
         </a>
       </div>
     </div> -->
-    <button
-      type="submit"
-      class="btn btn-primary"
-      style="background-color: #b0b0b0; color: black"
-      (click)="onClick()"
-    >
-      Add Details
-    </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="background-color: #050336; color: white"
+        (click)="onClick()"
+      >
+        Add Details
+      </button>
+    </div>
   </div>
 </form>

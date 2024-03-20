@@ -1,6 +1,9 @@
 <div class="container-fluid">
   <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0"
+      style="background-color: #050336"
+    >
       <div
         class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
       >
@@ -18,7 +21,9 @@
               class="nav-link align-middle px-0"
             >
               <i class="fs-4 bi-house"></i>
-              <span class="ms-1 d-none d-sm-inline">Home</span>
+              <span class="ms-1 d-none d-sm-inline" style="color: white"
+                >Home</span
+              >
             </a>
           </li>
           <li>
@@ -29,7 +34,9 @@
               class="nav-link px-0 align-middle"
             >
               <i class="fs-4 bi-speedometer2"></i>
-              <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+              <span class="ms-1 d-none d-sm-inline" style="color: white"
+                >Dashboard</span
+              >
             </a>
             <ul
               class="collapse show nav flex-column ms-1"
@@ -55,7 +62,9 @@
               class="nav-link px-0 align-middle"
             >
               <i class="fs-4 bi-table"></i>
-              <span class="ms-1 d-none d-sm-inline">Doctors</span></a
+              <span class="ms-1 d-none d-sm-inline" style="color: white"
+                >Doctors</span
+              ></a
             >
           </li>
           <!-- <li>
@@ -71,12 +80,15 @@
           </li> -->
           <li>
             <a
-              href="#submenu3"
+              [routerLink]="['symptom-checker']"
+              routerLinkActive="router-link-active"
               data-bs-toggle="collapse"
               class="nav-link px-0 align-middle"
             >
               <i class="fs-4 bi-grid"></i>
-              <span class="ms-1 d-none d-sm-inline">Department</span>
+              <span class="ms-1 d-none d-sm-inline" style="color: white"
+                >symptom checker</span
+              >
             </a>
             <ul
               class="collapse nav flex-column ms-1"
@@ -87,7 +99,9 @@
           <li>
             <a href="#" class="nav-link px-0 align-middle">
               <i class="fs-4 bi-people"></i>
-              <span class="ms-1 d-none d-sm-inline">logout</span>
+              <span class="ms-1 d-none d-sm-inline" style="color: white"
+                >logout</span
+              >
             </a>
           </li>
         </ul>

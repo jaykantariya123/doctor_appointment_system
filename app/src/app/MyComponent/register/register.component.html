@@ -1,5 +1,15 @@
 <form>
   <div class="m-5">
+    <div class="wrapper-success" *ngIf="registrationSuccess">
+      <div class="card">
+        <div class="icon"><i class="fas fa-check-circle"></i></div>
+        <div class="subject">
+          <h3>Success</h3>
+          <p>Anyone with access can view your invited visitors</p>
+        </div>
+        <div class="icon-times"><i class="fas fa-times"></i></div>
+      </div>
+    </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
@@ -100,7 +110,7 @@
     <button
       type="submit"
       class="btn btn-primary"
-      style="background-color: #b0b0b0; color: black"
+      style="background-color: #050336; color: wh"
       (click)="onClick()"
     >
       Sign up

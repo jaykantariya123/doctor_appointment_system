@@ -23,8 +23,8 @@ export class RoomComponent {
   }
 
   myMeeting(): void {
-    const appID = 1697498303;
-    const serverSecret = "3326695e7e0bd99e83739c7393716779";
+    const appID = 266376261;
+    const serverSecret = "9148965a9b3bc3f3db080239d8a81f9e";
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, this.roomId, Date.now().toString(), "jay");
     const zc = ZegoUIKitPrebuilt.create(kitToken);
     zc.joinRoom({

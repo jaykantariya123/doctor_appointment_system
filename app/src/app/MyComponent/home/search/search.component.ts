@@ -8,6 +8,7 @@ interface Doctor {
   email: string;
   website: string;
   specialization: string;
+  amount:string;
   experience: string;
   timeslots: {
     morningStart: String,
@@ -41,7 +42,8 @@ export class SearchComponent {
           website: item.website,
           specialization: item.specialization,
           experience: item.experience,
-          timeslotes: item.timeSlot
+          timeslotes: item.timeSlot,
+          amount: item.feesPerCunsaltation,
         }));
         // console.log(this.doctors);
         // console.log("successful data added");

@@ -2,7 +2,7 @@
 
 
 body {
-    background-color: #eee;
+    background-color: #050336;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
@@ -22,7 +22,7 @@ body {
 
     height: 60px;
     text-indent: 25px;
-    border: 2px solid #d6d4d4;
+    border: 2px solid #050336;
 
 
 }
@@ -31,7 +31,7 @@ body {
 .search input:focus {
 
     box-shadow: none;
-    border: 2px solid blue;
+    border: 2px solid #050336;
 
 
 }
@@ -51,6 +51,7 @@ body {
     right: 5px;
     height: 50px;
     width: 110px;
-    background: blue;
+    border: "1px solid #050336";
+    background: #050336;
 
 }
